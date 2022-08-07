@@ -1,0 +1,242 @@
+drop table distributie;
+drop table film;
+drop table studio;
+drop table persoana;
+
+create table film
+(
+    titlu varchar2(30),
+    an number(4),
+    durata number(3),
+    gen varchar2(10),
+    studio varchar2(30),
+    id_producator number(3)
+);
+
+create table distributie
+(
+  titlu_film varchar2(30),
+  an_film number(4),
+  id_actor number(3)
+);
+
+create table persoana
+(
+  id_persoana number(3),
+  nume varchar2(30),
+  adresa varchar2(20),
+  sex char(1),
+  data_nasterii date,
+  castig_net number(10),
+  moneda char(3)
+);
+
+create table studio
+(
+  nume varchar2(30),
+  adresa varchar2(30),
+  tara varchar2(20),
+  id_presedinte number(3)
+);
+
+alter table persoana
+add email varchar(20);
+
+insert into film (titlu, an, durata, gen, studio, id_producator) values ('Chernobyl', 2021, 136, 'Drama', 'Central Partnership', 11);
+insert into film (titlu, an, durata, gen, studio, id_producator) values ('Star Wars', 1983, 185, 'SF', 'Lucasfilm Ltd', 513);
+insert into film (titlu, an, durata, gen, studio, id_producator) values ('The Godfather', 1972, 539, 'Drama', 'Paramount Pictures', 126);
+insert into film (titlu, an, durata, gen, studio, id_producator) values ('Iron Man 3', 2013, 130, 'SF', 'Marvel Studios', 180);
+insert into film (titlu, an, durata, gen, studio, id_producator) values ('Bad Trip', 2021, 84, 'Comedie', 'Orion Pictures', 197);
+insert into film (titlu, an, durata, gen, studio, id_producator) values ('Alvin And The Chipmunks', 2009, 88, 'Copii', 'Warner Bros', 238);
+insert into film (titlu, an, durata, gen, studio, id_producator) values ('Hotel Transylvania', 2012, 91, 'Copii', 'Studiourile Buftea', 219);
+insert into film (titlu, an, durata, gen, studio, id_producator) values ('abc', 2006, 82, 'Copii', 'Warner Bros', 238);
+
+insert into distributie (titlu_film, an_film, id_actor) values ('Chernobyl', 2021, 11);
+insert into distributie (titlu_film, an_film, id_actor) values ('Chernobyl', 2021, 210);
+insert into distributie (titlu_film, an_film, id_actor) values ('Star Wars', 1983, 112);
+insert into distributie (titlu_film, an_film, id_actor) values ('Star Wars', 1983, 222);
+insert into distributie (titlu_film, an_film, id_actor) values ('The Godfather', 1972, 341);
+insert into distributie (titlu_film, an_film, id_actor) values ('Iron Man 3', 2013, 123);
+insert into distributie (titlu_film, an_film, id_actor) values ('Iron Man 3', 2013, 190);
+insert into distributie (titlu_film, an_film, id_actor) values ('Bad Trip', 2021, 473);
+insert into distributie (titlu_film, an_film, id_actor) values ('Bad Trip', 2021, 781);
+insert into distributie (titlu_film, an_film, id_actor) values ('Hotel Transylvania', 2012, 312);
+insert into distributie (titlu_film, an_film, id_actor) values ('Hotel Transylvania', 2012, 219);
+insert into distributie (titlu_film, an_film, id_actor) values ('Hotel Transylvania', 2012, 221);
+insert into distributie (titlu_film, an_film, id_actor) values ('Alvin And The Chipmunks', 2009, 232);
+
+insert into studio(nume, adresa, tara, id_presedinte) values ('Central Partnership', 'Steve Hunt Road', 'USA', 241);
+insert into studio(nume, adresa, tara, id_presedinte) values ('Lucasfilm Ltd', 'Peck Street', 'USA', 163);
+insert into studio(nume, adresa, tara, id_presedinte) values ('Paramount Pictures', 'Hemlock Lane', 'USA', 456);
+insert into studio(nume, adresa, tara, id_presedinte) values ('Marvel Studios', 'Scenicview Drive', 'USA', 135);
+insert into studio(nume, adresa, tara, id_presedinte) values ('Orion Pictures', 'Flower Street', 'USA', 134);
+insert into studio(nume, adresa, tara, id_presedinte) values ('Warner Bros', 'Warner Boulevard Burbank', 'USA', 213);
+insert into studio(nume, adresa, tara, id_presedinte) values ('Studiourile Buftea', 'Studioului', 'Romania', 122);
+insert into studio(nume, adresa, tara, id_presedinte) values ('Disney', 'Kansas', 'USA', 221);
+
+
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (11, 'Hal B. Wallis', 'Chicago', 'M', '14-Dec-1890', 550000, 'USD','a@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (22, 'Humphrey Bogart', 'New York', 'M', '24-Nov-1897', 340000, 'USD','b@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (513, 'George Lucas', 'Modesto', 'M', '13-Jan-1955', 205000, 'GBP','c@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (126, 'Francis Ford Coppola', 'Detroit', 'M', '01-Apr-1952', 670000, 'EUR','ab@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (180, 'Kevin Feige', 'Boston', 'M', '26-May-1966', 678000, 'EUR','d@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (197, 'Jeff Tremaine', 'New York', 'M', '01-Dec-1969', 800000, 'USD','e@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (238, 'Jon Vitti', 'Illinois', 'M', '09-Mar-1967', 330000, 'USD','f@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (219, 'Jennifer Kluska', 'Pennsylvania', 'F', '01-May-1965', 30000, 'GBP','ef@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (210, 'Danila Kozlovsky', 'Pennsylvania', 'M', '10-Dec-1960', 201000, 'USD','g@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (112, 'Natalie Portman', 'Jerusalem', 'F', '15-May-1967', 990000, 'USD','fg@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (341, 'Marlon Brando ', ' Omaha ', 'M', '11-Jul-1975', 150000, 'GBP','ea@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (123, 'Robert Downey, Jr.', 'New York', 'M', '18-Apr-1993', 440000, 'USD','ha@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (190, 'Gwyneth Paltrow', 'New York', 'F', '08-Jun-1978', 4000000, 'USD','ai@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (473, 'Eric André', 'Boca Raton', 'M', '22-Apr-1954', 950000, 'USD','i@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (781, 'Tiffany Haddish', 'California', 'F', '19-Jul-1999', 860000, 'USD','h@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (312, 'Brian Hull', 'Boston', 'M', '23-Apr-1969',1100000, 'USD','aa@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (221, 'Selena Gomez', 'Texas', 'F', '21-Jan-1970', 5523000, 'USD','x@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (232, 'Justin Long', 'Connecticut', 'M', '24-Aug-1980', 700000, 'EUR','xa@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (241, 'Daniel Radcliffe', 'London', 'M', '06-Jan-1987', 400000, 'EUR','zaz@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (163, 'Rosie Burke', 'Omaha', 'F', '27-Apr-1980', 770000, 'EUR','za@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (456, 'Samuel Morris', 'Texas', 'M', '01-Apr-1978', 300500, 'GBP','wa@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (135, 'Aaron Reid', 'London', 'M',  '13-Apr-1988', 220000, 'USD','aww@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (134, 'Camren Snow', 'Ottawa', 'M', '14-Nov-1984', 6600000, 'USD','w@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (213, 'Lexie James', 'New York', 'F', '19-May-1977', 9200000, 'GBP','s@gmail.com');
+insert into persoana(id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda,email) values (122, 'Bogdan Popescu', 'Bucuresti', 'M', '13-Sep-1984', 130000, 'EUR','sas@gmail.com');
+
+alter table film
+add constraint filmC primary key(titlu, an);
+
+alter table distributie
+add constraint distributieC primary key(titlu_film, an_film, id_actor);
+
+alter table persoana
+add constraint persoanaC primary key(id_persoana);
+
+alter table studio
+add constraint studioC primary key(nume);
+
+alter table distributie
+add constraint distributieFK01 foreign key(titlu_film,an_film) references film(titlu,an);
+alter table film
+add constraint filmFK1 foreign key (studio) references studio(nume);
+alter table film
+add constraint filmFK2 foreign key (id_producator) references persoana(id_persoana);
+alter table distributie
+add constraint distributieFK foreign key (id_actor) references persoana(id_persoana);
+alter table studio
+add constraint studioFK foreign key (id_presedinte) references persoana(id_persoana);
+
+2)
+alter table film
+add constraint gen_film check(gen IN ('Drama' , 'Comedie' , 'SF' , 'Copii'));
+
+alter table studio
+add constraint nume_adresa check((nume like '%Buftea%' and tara ='Romania') or (adresa not like '%Buftea%' and tara<>'Romania'));
+3)
+select *
+from film
+where gen='SF' and an>1990
+order by an asc ,titlu asc;
+
+select nume
+from persoana
+where sex='F' and castig_net>1000000 and moneda='USD'
+order by nume asc;
+4)
+select p.id_persoana, p.nume, p.adresa, p.sex, p.data_nasterii, p.castig_net, p.moneda, s.nume, s.adresa, s.id_presedinte
+from film f join persoana p on(p.id_persoana = f.id_producator)  join studio s on(f.studio = s.nume)
+where f.titlu = 'Iron Man 3';
+
+select d1.id_actor "id_actor", d2.id_actor "id_actor2", d1.titlu_film,p1.sex,p2.sex
+from (persoana p1 join distributie d1 on(p1.id_persoana=d1.id_actor)) join(persoana p2 join distributie d2 on(p2.id_persoana=d2.id_actor)) on (d1.titlu_film=d2.titlu_film)
+where d1.id_actor < d2.id_actor and (p1.sex<p2.sex OR p2.sex<p1.sex)
+order by d1.id_actor;
+5)
+select p.nume
+from persoana p
+where p.nume in(select p.nume
+               from persoana p join distributie d on( p.id_persoana = d.id_actor ) join film f on(d.id_actor=f.id_producator));
+
+select titlu, an, gen, durata
+from film
+where durata >= all(select durata
+                   from film);
+6)
+select d.id_actor, sum(case when gen='Comedie' then 1 else 0 end) as "Filme de Comedie"
+from distributie d join film f on(d.titlu_film=f.titlu)
+group by d.id_actor;
+
+select s.nume, min(castig_net), avg(castig_net), max(castig_net)
+from studio s join film f on (s.nume=f.studio) join persoana p on(f.id_producator=p.id_persoana)
+group by s.nume;
+7)
+insert into film(titlu,an,durata,gen,studio,id_producator)
+values('The Maltese Falcon',1941, 100, 'Drama', 'Warner Bros', 11)
+------
+insert into distributie()
+values('The Maltese Falcon',1941,22);
+
+delete from film
+where titlu in (select titlu
+                from film
+                minus
+                select titlu_film
+                from distributie);
+
+update persoana
+set castig_net=round(castig_net/0.85,2),moneda='EUR'
+where moneda='GBP';
+
+8)a.
+CREATE OR REPLACE TRIGGER TriggerA
+AFTER INSERT ON Distributie
+FOR EACH ROW
+DECLARE
+     valid INTEGER := 0;
+BEGIN
+     SELECT COUNT(*) INTO valid
+     FROM Film
+     WHERE :new.id_actor = id_producator AND :new.titlu_film = titlu AND :new.an_film = an;
+
+     IF valid = 1 THEN
+         UPDATE Persoana SET Castig_net = Castig_net + 0.02 * Castig_net WHERE id_persoana = :new.id_actor;
+     ELSE
+         UPDATE Persoana SET Castig_net = Castig_net + 0.01 * Castig_net WHERE id_persoana = :new.id_actor;
+     END IF;
+END;
+
+b.
+CREATE OR REPLACE TRIGGER TriggerB
+BEFORE UPDATE OF castig_net ON Persoana
+FOR EACH ROW
+DECLARE
+    valid INTEGER := 0;
+BEGIN
+
+    SELECT COUNT(*) INTO valid
+    FROM Studio s
+    WHERE :new.id_persoana = s.id_presedinte;
+
+
+    IF :new.castig_net < :old.castig_net AND valid = 1 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Nu scadem salariul Presedintelui de studio.');
+    END IF;
+END;
+
+
+c.
+CREATE VIEW FilmecopiiDisney AS
+SELECT titlu, an, gen, durata, id_persoana, nume AS Producator, adresa, sex, data_nasterii, castig_net, moneda
+FROM Film, Persoana
+WHERE id_persoana = id_producator AND studio = 'Disney' AND gen = 'Copii';
+
+CREATE OR REPLACE TRIGGER Trigger_view
+INSTEAD OF INSERT ON FilmeCopiiDisney
+FOR EACH ROW
+
+BEGIN
+    INSERT INTO Persoana (id_persoana, nume, adresa, sex, data_nasterii, castig_net, moneda)
+    VALUES (:new.id_persoana, :new.producator, :new.adresa, :new.sex, :new.data_nasterii, :new.castig_net, :new.moneda);
+
+    INSERT INTO Film (titlu, an, durata, gen, studio, id_producator)
+    VALUES (:new.titlu, :new.an, :new.durata, 'Copii', 'Disney', :new.id_persoana);
+
+END;
